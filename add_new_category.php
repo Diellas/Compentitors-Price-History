@@ -9,7 +9,7 @@ $category_name = $_GET['par1'];
        echo "User data was inserted successfully";
      }
      else{
-      echo  "Error: " . $sql . "<br>" . mysqli_error($db);
+      echo  "Error: " . $wplink . "<br>" . mysqli_error($db);
      }
  
  

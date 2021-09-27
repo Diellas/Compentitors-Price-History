@@ -41,7 +41,7 @@
 			<div class="ui-grid-a"><div class="ui-block-a">
 					<div class="ui-bar ui-bar-a" style="min-height:120px">
 							<?php
-							echo '<ul data-role="listview">';
+							echo '<ul data-role="listview" data-inset="true">';
 								$result = $wplink -> query("select * from category");
 								while ($row = mysqli_fetch_array($result)) {
 									echo'<li id="'.$row[0].'" onClick="run_category(this.id)"><a href="#">'.$row[1].'</a></li>';
@@ -49,7 +49,7 @@
 							echo '</ul>';?>
 					</div></div>
 				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="min-height:120px">
-							<ul class="product_list" data-role="listview"></ul>
+							<ul  id="menu" class="product_list" data-role="listview" data-inset="true" data-split-icon="plus" ></ul>
 					</div></div>
 			</div>
 		</div>

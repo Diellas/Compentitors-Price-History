@@ -16,14 +16,20 @@
 	<script>
 		function add_category(category_name)
 		  {
-			    var category_name = $('#category_name').val();
+			    var barcode = $('#barcode').val();
+				var smallcode = $('#smallcode').val();
+				var product_descr = $('#product_descr').val();
+				var prod_category = $('#prod_category').val();
+				 var x=confirm( "Είστε σίγουρος που θέλετε να προσθέσετε το προϊόν "+product_descr);
+					if(x){
+				
 				$.ajax({
-				url: "add_new_category.php?par1=" + category_name,
+				url: "add_new_product.php?par1=" + barcode + "&par2= " + smallcode + "&par3= " + product_descr + "&par4= " + prod_category ,
 				type: 'POST',
 				success: function(result) {
 					// use the result as you wish in your html here
 				}});
-
+				}
 			}
 	</script>
 </head>
@@ -37,13 +43,13 @@
 		<p id="msg"></p>
 		<form id="userForm" method="POST">
 			<label for="text-basic">Barcode:</label>
-			<input type="text" name="barcode" id="code" value="">
+			<input type="text" name="barcode" id="barcode" value="">
 			<label for="text-basic">Φορολογικός:</label>
 			<input type="text" name="smallcode" id="smallcode" value="">
 			<label for="text-basic">Περιγραφή:</label>
 			<input type="text" name="product_descr" id="product_descr" value="">
 			<label for="select-choice-a" class="select">Κατηγορία:</label>
-			<select name="product_descr" id="product_descr" data-native-menu="false">
+			<select name="prod_category" id="prod_category" data-native-menu="false">
 				<option>Διαλέξτε Κατηγορία</option>
 			<?php
 				
@@ -64,3 +70,5 @@
 
 </body>
 </html>
+
+https://comp.diellas.eu/add_new_product.php?par1=321654&par2=321654321&par3=%27aasdasd%27&par4=1

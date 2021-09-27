@@ -14,9 +14,14 @@
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script>
+	
+
 		function add_category(category_name)
 		  {
-			    var category_name = $('#category_name').val();
+			  var category_name = $('#category_name').val();
+			   var x=confirm( "Είστε σίγουρος που θέλετε να προσθέσετε την κατηγορία "+category_name);
+           if(x){
+			    
 				$.ajax({
 				url: "add_new_category.php?par1=" + category_name,
 				type: 'POST',
@@ -25,6 +30,9 @@
 				}});
 
 			}
+		  }
+
+
 	</script>
 </head>
 <body>
