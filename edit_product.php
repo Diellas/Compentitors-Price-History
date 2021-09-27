@@ -2,7 +2,7 @@
 <?php require('db/connect.php'); ?>
 <html lang="en">
 <head>
-    <title>Καταχώρηση Κωδικού</title>
+    <title>Καταχώρηση Κατηγορίας</title>
     <meta name="copyright" content="Copyright 2021. All rights reserved.">
     <meta content="text/html;charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,15 +16,16 @@
 	<script>
 		function add_category(category_name)
 		  {
+				var id_prod = $('#id_prod').val();
 			    var barcode = $('#barcode').val();
 				var smallcode = $('#smallcode').val();
 				var product_descr = $('#product_descr').val();
 				var prod_category = $('#prod_category').val();
-				 var x=confirm( "Είστε σίγουρος που θέλετε να προσθέσετε το προϊόν "+product_descr);
+				 var x=confirm( "Είστε σίγουρος που θέλετε να τροποποιήσετε το προϊόν "+product_descr);
 					if(x){
 				
 				$.ajax({
-				url: "add_new_product.php?par1=" + barcode + "&par2= " + smallcode + "&par3= " + product_descr + "&par4= " + prod_category ,
+				url: "edit_this_product.php?par0=" + id_prod + "&par1=" + barcode + "&par2= " + smallcode + "&par3= " + product_descr + "&par4= " + prod_category ,
 				type: 'POST',
 				success: function(result) {
 					// use the result as you wish in your html here
@@ -37,31 +38,44 @@
 
 <div data-role="page">
 		<div data-role="header">
-			<h1>Καταχώρηση Κατηγορίας</h1>
+			<h1>Επεξεργασία Κωδικού</h1>
 		</div><!-- /header -->
 		<div role="main" class="ui-content">
 		<p id="msg"></p>
+		
+		<?php
+				
+			$result = $wplink -> query("SELECT * FROM product where id=3");
+				while ($row = mysqli_fetch_array($result)) {
+				$id_prod = row[0];
+			?>
+		
 		<form id="userForm" method="POST">
+			<input style="display:none;" type="text" name="id_prod" id="id_prod" value="<?php echo $row[0];?>">
 			<label for="text-basic">Barcode:</label>
-			<input type="text" name="barcode" id="barcode" value="">
+			<input type="text" name="barcode" id="barcode" value="<?php echo $row[1];?>">
 			<label for="text-basic">Φορολογικός:</label>
-			<input type="text" name="smallcode" id="smallcode" value="">
+			<input type="text" name="smallcode" id="smallcode" value="<?php echo $row[2];?>">
 			<label for="text-basic">Περιγραφή:</label>
-			<input type="text" name="product_descr" id="product_descr" value="">
+			<input type="text" name="product_descr" id="product_descr" value="<?php echo $row[3];?>">
 			<label for="select-choice-a" class="select">Κατηγορία:</label>
 			<select name="prod_category" id="prod_category" data-native-menu="false">
-				<option>Διαλέξτε Κατηγορία</option>
-			<?php
-				
-			$result = $wplink -> query("SELECT * FROM category");
-				while ($row = mysqli_fetch_array($result)) {
-					echo '<option value="'.$row[0].'">'.$row[1].'</option>';
-					
-				}
-			?>
-			</select>
 			
-			<button  onClick="add_category(this.id)" class="ui-shadow ui-btn ui-corner-all">Καταχώρηση</button>
+				<?php
+				$result = $wplink -> query("SELECT * FROM category");
+				while ($row2 = mysqli_fetch_array($result)) {
+					
+					if($row[4]==$row2[0]){
+						echo '<option selected="selected" value="'.$row2[0].' ">'.$row2[1].'</option>';
+					}else{
+						echo '<option value="'.$row2[0].' ">'.$row2[1].'</option>';	
+					}
+
+				}
+				?>
+			</select>
+			<?php } ?>
+			<button  onClick="add_category(this.id)" class="ui-shadow ui-btn ui-corner-all">Καταχώρηση Αλλαγών</button>
 		</form>	
 		</div>
 		
@@ -70,5 +84,3 @@
 
 </body>
 </html>
-
-https://comp.diellas.eu/add_new_product.php?par1=321654&par2=321654321&par3=%27aasdasd%27&par4=1

@@ -49,7 +49,7 @@
 							echo '</ul>';?>
 					</div></div>
 				<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="min-height:120px">
-							<ul  id="menu" class="product_list" data-role="listview" data-inset="true" data-split-icon="plus" ></ul>
+							<ul class="product_list" data-role="listview" data-split-icon="gear" ></ul>
 					</div></div>
 			</div>
 		</div>
