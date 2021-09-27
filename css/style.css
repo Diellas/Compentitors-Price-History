@@ -1,0 +1,15 @@
+.ui-field-contain, .ui-mobile fieldset.ui-field-contain{
+	    margin: 0;
+}
+
+.ui-table th .ui-btn, .ui-table td .ui-btn{
+	font-size: 14px;
+}
+
+.ui-table th, .ui-table td{
+	vertical-align: middle;
+}
+
+.ui-content .ui-listview, .ui-panel-inner>.ui-listview{
+	    margin: 0;
+}
