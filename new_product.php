@@ -36,9 +36,8 @@
 <body>
 
 <div data-role="page">
-		<div data-role="header">
-			<h1>Καταχώρηση Κατηγορίας</h1>
-		</div><!-- /header -->
+		 <?php include 'assets/header.php';?>
+
 		<div role="main" class="ui-content">
 		<p id="msg"></p>
 		<form id="userForm" method="POST">

@@ -1,3 +1,14 @@
+        @media only screen and (min-width: 600px){
+            .ui-content {
+                width: 1670px !important;
+                margin: 0 auto !important;
+                position: relative !important;
+      
+            }
+     }
+
+
+
 .ui-field-contain, .ui-mobile fieldset.ui-field-contain{
 	    margin: 0;
 }
@@ -13,3 +24,5 @@
 .ui-content .ui-listview, .ui-panel-inner>.ui-listview{
 	    margin: 0;
 }
+
+
