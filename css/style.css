@@ -1,13 +1,25 @@
-        @media only screen and (min-width: 600px){
-            .ui-content {
-                width: 1670px !important;
-                margin: 0 auto !important;
-                position: relative !important;
-      
-            }
-     }
+.price_tag{
+	font-size: 17px;
+}
+
+.red_button{
+	background-color: #ff0000!important;
+    border-color: #ddd!important;
+    color: #fff!important;
+    text-shadow: none!important;
+}
+
+.blue_button{
+	background-color: #008eff!important;
+    border-color: #ddd!important;
+    color: #fff!important;
+    text-shadow: none!important;
+}
 
 
+.edit_prod_buttons{
+	margin-top: 60px;
+}
 
 .ui-field-contain, .ui-mobile fieldset.ui-field-contain{
 	    margin: 0;
@@ -23,6 +35,59 @@
 
 .ui-content .ui-listview, .ui-panel-inner>.ui-listview{
 	    margin: 0;
+}
+
+.ui-li-static.ui-collapsible > .ui-collapsible-heading {
+    margin: 0;
+}
+.ui-li-static.ui-collapsible {
+    padding: 0;
+}
+.ui-li-static.ui-collapsible > .ui-collapsible-heading > .ui-btn {
+    border-top-width: 0;
+}
+.ui-li-static.ui-collapsible > .ui-collapsible-heading.ui-collapsible-heading-collapsed > .ui-btn,
+.ui-li-static.ui-collapsible > .ui-collapsible-content {
+    border-bottom-width: 0;
+}
+
+
+/*split on 3 listview */
+
+.has-listCheck > li > a:first-child {
+  margin-left: 40px !important;
+}
+
+.has-listCheck >li.ui-last-child > .listCheck {
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.listCheck {
+  position: absolute;
+  top: 0px;
+  width: 40px;
+  bottom: 0px;
+  z-index: 100;
+  border-top: 1px solid rgb(221, 221, 221);
+  border-right: 1px solid rgb(221, 221, 221);
+  background-color: rgb(246, 246, 246);
+}
+
+.listCheck .ui-checkbox,
+.listCheck .ui-checkbox label {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+.listCheck label {
+  background-image: none;
+  background-color: transparent;
+  border: 0;
 }
 
 

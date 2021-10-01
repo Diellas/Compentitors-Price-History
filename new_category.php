@@ -12,7 +12,7 @@
 		<form id="userForm" method="POST">
 			<label for="text-basic">Όνομα Κατηγορίας:</label>
 			<input type="text" name="category_name" id="category_name" value="">
-			<button  onClick="add_category(category_name)" class="ui-shadow ui-btn ui-corner-all">Καταχώρηση</button>
+			<button  onClick="add_category(category_name)" class="ui-shadow ui-btn ui-corner-all blue_button">Καταχώρηση</button>
 		</form>	
 		</div>
 		

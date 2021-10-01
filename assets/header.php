@@ -4,8 +4,8 @@
 		<a href="#menu" data-role="button" data-rel="popup" data-icon="gear" class="ui-btn-right" >Menu</a>
 			<div id="menu" data-role="popup">
 				<ul data-role="listview" data-inset="true">
-					<li><a href="../new_category.php">Προσθήκη Κατηγορίας</a></li>
-					<li><a href="../new_product.php">Προσθήκη Προϊόντος</a></li>
+					<li><a rel="external" data-ajax="false"  href="../new_category.php">Προσθήκη Κατηγορίας</a></li>
+					<li><a rel="external" data-ajax="false"  href="../new_product.php">Προσθήκη Προϊόντος</a></li>
 				</ul>
 			</div>	
 	</div><!-- /header -->
